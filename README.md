@@ -1,6 +1,6 @@
-#Orchestration-Scaling
+# Orchestration-Scaling
 
-##AWS CLI and Boto3 Setup Guide
+## AWS CLI and Boto3 Setup Guide
 
 This guide provides step-by-step instructions on how to set up AWS Command Line Interface (CLI) and Boto3, a Python SDK for AWS. This setup will enable you
 to interact with AWS services directly from your command line and Python scripts.
@@ -28,39 +28,50 @@ Installation
 
 2. **Setting Up Boto3**
 
-Installation
+    Installation
 
-1. Install Boto3: Run the command `pip install boto3` in your terminal or command prompt.
+    1. Install Boto3: Run the command `pip install boto3` in your terminal or command prompt.
 
 **Configuration**
 
-Boto3 uses the credentials stored by AWS CLI. If AWS CLI is configured, no additional steps are required for Boto3.
+  Boto3 uses the credentials stored by AWS CLI. If AWS CLI is configured, no additional steps are required for Boto3.
 
-3. Containerized using Docker
+  3. Containerized using Docker
 
 **Frontend**
 1. Clone the repository:
    ```bash
    git clone https://github.com/UnpredictablePrashant/SampleMERNwithMicroservices.git
 
-1.   Navigate to SampleMERNwithMicroservices/frontend.
-2.   Use the provided dockerfile to create a container image:
-    ` sudo docker build -t frontendimage .`
+1. Navigate to SampleMERNwithMicroservices/frontend.
+   
+2. Use the provided dockerfile to create a container image:
+   
+   `sudo docker build -t frontendimage .`
 
-   **Backend**
-1.Navigate to SampleMERNwithMicroservices/backend/helloService.
-2.Use the provided Dockerfile to create a container image:
- `sudo docker build -t backendhelloimg .`
 
-3.Navigate to SampleMERNwithMicroservices/backend/profile.
-4.Use the provided Dockerfile to create a container image:
- `sudo docker build -t backendprofileimg .`
+**Backend**
 
- **Amazon ECR Setup**
-Create an Amazon ECR repository for each image:
+1. Navigate to `SampleMERNwithMicroservices/backend/helloService`.
+
+2. Use the provided Dockerfile to create a container image:
+   
+   `sudo docker build -t backendhelloimg .`
+
+3. Navigate to SampleMERNwithMicroservices/backend/profile.
+
+4. Use the provided Dockerfile to create a container image:
+
+     `sudo docker build -t backendprofileimg .`
+
+**Amazon ECR Setup**
+ 
+>Create an Amazon ECR repository for each image:
 
 1.Hello Microservice: public.ecr.aws/s7f2n3x3/nikhil_backend1
+
 2.Profile Microservice: public.ecr.aws/s7f2n3x3/nikhil_backend2
+
 3.Frontend Microservice: public.ecr.aws/s7f2n3x3/nikhil_frontend1
 
 
